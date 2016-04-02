@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\lib;..\usr</IncludePath>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -409,24 +409,9 @@
           <GroupName>lib</GroupName>
           <Files>
             <File>
-              <FileName>Configuration.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\lib\Configuration.h</FilePath>
-            </File>
-            <File>
               <FileName>FIFOBuffer.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\lib\FIFOBuffer.h</FilePath>
-            </File>
-            <File>
-              <FileName>GPIO.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\lib\GPIO.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>GPIO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\lib\GPIO.h</FilePath>
             </File>
             <File>
               <FileName>Interrupt.cpp</FileName>

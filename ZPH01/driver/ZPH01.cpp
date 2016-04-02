@@ -1,11 +1,3 @@
-/*!
-  *@file 		ZPH01.h
-  *@brief 	驱动ZPH01粉尘传感器
-  *@author 	lissettecarlr
-  *@date 		2016/4/2
-  */
-
-
 #include "ZPH01.h"
 
 ZPH01::ZPH01(USART &usart):mUsart(usart)
@@ -17,10 +9,11 @@ ZPH01::~ZPH01()
 {
 }
 
+
 //获得数据
 float ZPH01::GetData()
 {
-	return mConcentration;
+	return Concentration;
 }
 
 bool ZPH01::Updata()
@@ -37,9 +30,11 @@ bool ZPH01::Updata()
 			mUsart.GetReceivedData(mData,9); 
 		if(FucCheckSum(mData,8)==mData[8])
 		{
-			mConcentration = (mData[3] + mData[4] /100.0)*20;	
-			mData_h=(u8)mConcentration; //保存整数
-			mData_l=(u8)  ( (u16)(mConcentration*10)%10 );  //保存小数
+//			data_h=mData[3];
+//			data_l=mData[4];
+			Concentration = (mData[3] + mData[4] /100.0)*20;	
+			data_h=(u8)Concentration; //保存整数
+			data_l=(u8)  ( (u16)(Concentration*10)%10 );  //保存小数
 			mUsart.ClearReceiveBuffer();
 			return true;
 		}
